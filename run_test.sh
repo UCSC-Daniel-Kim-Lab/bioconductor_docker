@@ -11,20 +11,18 @@ REFERENCE='/public/groups/kimlab/genomes.annotations/gencode.35:/home/$(USER)/re
 USER_ID=$(shell id -u)
 OUTPUT='/public/groups/kimlab/aale-KRAS-G12-transformation/output.data:/home/${USER}/output.data'
 CONFIG='/public/home/${USER}/.rstudio_docker_config:/home/${USER}/.config/rstudio'
+#-v ${DATA} \
+#-v ${NOTEBOOKS} \
+#-v ${FIGURES} \
+#-v ${BIN} \
+#-v ${R} \
+#-v ${REFERENCE} \
+#-v ${OUTPUT} \
 
 @echo 'making rstudio session hosted at 127 0 0 1 2828 8787 for ${USER}:${USER_ID}'
-docker run --rm -p 127.0.0.1:3838:8787 -e \
-	DISABLE_AUTH=true \
+docker run --rm -p 127.0.0.1:3838:8787 -e DISABLE_AUTH=true \
 	-e USER=${USER} \
 	-e USERID=${USER_ID} \
 	--detach \
-	#-v ${DATA} \
-	#-v ${NOTEBOOKS} \
-	#-v ${FIGURES} \
-	#-v ${BIN} \
-	#-v ${R} \
-	#-v ${REFERENCE} \
-	#-v ${OUTPUT} \
 	-v ${CONFIG} \
-	#rreggiar/rstudio_workspace:ready_to_run
 	kimlab_rstudio:latest
