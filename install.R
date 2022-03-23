@@ -7,7 +7,7 @@ install.packages(c('here', 'ggsci', 'ggthemes', 'ggpubr', 'ggsignif',
 BiocManager::install(version="3.14", update=TRUE, ask=FALSE)
 
 BiocManager::install(c('devtools', 'AnVIL', 'msigdbr', 'fgsea',
-		       'tximeta', 'summarizedExperiment', 'HDF5Array',
+		       'tximeta', 'SummarizedExperiment', 'HDF5Array',
 		       'DESeq2', 'ComplexHeatmap', 'survival', 'survminer',
 		       'rGREAT', 'GenomicRanges', 'BSgenome.Hsapiens.UCSC.hg38',
 		       'BSgenome'))
