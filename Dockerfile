@@ -1,5 +1,5 @@
 # The suggested name for this image is: bioconductor/bioconductor_docker:devel
-FROM rocker/tidyverse:devel
+FROM rocker/tidyverse:latest
 
 ## Set Dockerfile version number
 ARG BIOCONDUCTOR_VERSION=3.15

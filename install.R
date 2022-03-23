@@ -2,7 +2,7 @@ install.packages("BiocManager", repos="https://cran.rstudio.com")
 
 install.packages(c('here', 'ggsci', 'ggthemes', 'ggpubr', 'ggsignif',
 		   'ggforce', 'ggupset', 'patchwork', 'ggrepel',
-		   'extrafont', 'viridis', 'rjson', 'ggpmisc'))
+		   'extrafont', 'viridis', 'rjson', 'ggpmisc', 'import'))
 
 BiocManager::install(version="3.15", update=TRUE, ask=FALSE)
 
