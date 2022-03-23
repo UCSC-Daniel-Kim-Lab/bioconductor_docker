@@ -2,7 +2,7 @@
 FROM rocker/tidyverse:latest
 
 ## Set Dockerfile version number
-ARG BIOCONDUCTOR_VERSION=3.15
+ARG BIOCONDUCTOR_VERSION=3.14
 
 ##### IMPORTANT ########
 ## The PATCH version number should be incremented each time
