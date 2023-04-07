@@ -148,6 +148,10 @@ ADD install.R /tmp/
 
 RUN R -f /tmp/install.R
 
+ADD install_MEME.sh
+
+RUN bash install_MEME.sh
+
 # DEVEL: Add sys env variables to DEVEL image
 # Variables in Renviron.site are made available inside of R.
 # Add libsbml CFLAGS
