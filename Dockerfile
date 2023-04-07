@@ -148,9 +148,9 @@ ADD install.R /tmp/
 
 RUN R -f /tmp/install.R
 
-ADD install_MEME.sh
+ADD install_MEME.sh /tmp/
 
-RUN bash install_MEME.sh
+RUN bash /tmp/install_MEME.sh
 
 # DEVEL: Add sys env variables to DEVEL image
 # Variables in Renviron.site are made available inside of R.
