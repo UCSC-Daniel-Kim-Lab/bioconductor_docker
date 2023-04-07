@@ -13,3 +13,7 @@ BiocManager::install(c('devtools', 'AnVIL', 'msigdbr', 'fgsea',
 		       'BSgenome'))
 
 # RERWIP -- install r memes
+remotes::install_github("snystrom/cmdfun")
+remotes::install_cran("BiocManager")
+remotes::install_github("snystrom/memes", dependencies = TRUE)
+
