@@ -148,6 +148,10 @@ ADD install.R /tmp/
 
 RUN R -f /tmp/install.R
 
+ADD install_PERL.sh /tmp/install_PERL.sh
+
+RUN bash install_PERL.sh
+
 ADD install_MEME.sh /tmp/
 
 RUN bash /tmp/install_MEME.sh
