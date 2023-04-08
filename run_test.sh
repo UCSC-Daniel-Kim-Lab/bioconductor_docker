@@ -30,4 +30,4 @@ docker run --rm -p 127.0.0.1:"${PORT}":8787 -e DISABLE_AUTH=true \
 	-v "${REFERENCE}" \
 	-v "${OUTPUT}" \
 	-v "${CONFIG}" \
-	kimlab_rstudio:latest
+	kimlab_rstudio:memes
