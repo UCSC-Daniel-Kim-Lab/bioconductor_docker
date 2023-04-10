@@ -168,7 +168,7 @@ RUN bash /tmp/install_MEME.sh
 
 # apply correct MEME path to global env
 # for MEMES
-echo "MEME_PATH=/opt/meme-5.5.1/bin"
+RUN echo "MEME_PATH=/opt/meme-5.5.1/bin" >> /usr/local/lib/R/etc/Renviron.site
 
 # DEVEL: Add sys env variables to DEVEL image
 # Variables in Renviron.site are made available inside of R.
