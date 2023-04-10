@@ -144,17 +144,31 @@ RUN apt-get update \
 ## Add host-site-library
 RUN echo "R_LIBS=/usr/local/lib/R/host-site-library:\${R_LIBS}" > /usr/local/lib/R/etc/Renviron.site
 
+# install MEME unix utilities dependencies
+ADD install_UTIL.sh /tmp/
+
+RUN bash /tmp/install_UTIL.sh
+
+# install R dependencies
+# TODO 
+# ALL R PACKAGE INSTALLS SHOULD GO HERE
 ADD install.R /tmp/
 
 RUN R -f /tmp/install.R
 
+# insall MEME perl dependencies
 ADD install_PERL.sh /tmp/install_PERL.sh
 
-RUN bash install_PERL.sh
+RUN bash /tmp/install_PERL.sh
 
+# install AND build MEME
 ADD install_MEME.sh /tmp/
 
 RUN bash /tmp/install_MEME.sh
+
+# apply correct MEME path to global env
+# for MEMES
+echo "MEME_PATH=/opt/meme-5.5.1/bin"
 
 # DEVEL: Add sys env variables to DEVEL image
 # Variables in Renviron.site are made available inside of R.
