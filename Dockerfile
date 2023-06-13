@@ -2,7 +2,7 @@
 FROM rocker/tidyverse:devel
 
 ## Set Dockerfile version number
-ARG BIOCONDUCTOR_VERSION=3.15
+ARG BIOCONDUCTOR_VERSION=3.18
 
 ##### IMPORTANT ########
 ## The PATCH version number should be incremented each time
@@ -142,7 +142,7 @@ RUN apt-get update \
 	&& rm -rf /var/lib/apt/lists/*
 
 ## Add host-site-library
-RUN echo "R_LIBS=/usr/local/lib/R/host-site-library:\${R_LIBS}" > /usr/local/lib/R/etc/Renviron.site
+RUN echo "R_LIBS=/home/host-site-library:\${R_LIBS}" > /usr/local/lib/R/etc/Renviron.site
 
 ADD install.R /tmp/
 
